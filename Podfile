@@ -1,2 +1,3 @@
-$platform:ios,'8.0'
-="s3">$pod 'AFNetworking', '~>2.3.1'
+platform :ios,'8.0'
+use_frameworks!
+pod 'Alamofire'
