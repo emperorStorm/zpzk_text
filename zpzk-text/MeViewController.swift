@@ -10,6 +10,7 @@ import UIKit
 
 class MeViewController: UIViewController {
 
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,23 +22,29 @@ class MeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        let dic = User.getUser()
+        if let flag = dic["flag"] as? Int where flag == 1 {
+//            loginBtn.titleLabel?.text = dic["web_user"]!["name"] as? String
+            loginBtn.setTitle(dic["web_user"]!["name"] as? String, forState: UIControlState.Normal)
+            loginBtn.enabled = false
+        }else {
+//            loginBtn.titleLabel?.text = "登陆正品折扣"
+            loginBtn.setTitle("登陆正品折扣", forState: UIControlState.Normal)
+            loginBtn.enabled = true 
+        }
+    }
+    
     //MAEK:登陆
     @IBAction func loginBtn(sender: UIButton) {
-//        let nib=LoginViewController()//需要跳转的viewcontroller
         self.presentViewController(LoginViewController(), animated: true, completion: nil)
     }
     
     //MARK:退出登录
     @IBAction func exitBtn(sender: UIButton) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("User")
+        loginBtn.setTitle("登陆正品折扣", forState: UIControlState.Normal)
+        loginBtn.enabled = true
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

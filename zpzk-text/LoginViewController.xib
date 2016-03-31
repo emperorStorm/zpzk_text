@@ -62,11 +62,17 @@
                     <rect key="frame" x="165" y="271" width="170" height="30"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="DJH-Id-cNj"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yqB-mz-lq6">
                     <rect key="frame" x="165" y="324" width="170" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="nE1-d8-MiK"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8w-XT-nij">
                     <rect key="frame" x="41" y="438" width="116" height="32"/>
