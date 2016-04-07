@@ -25,11 +25,9 @@ class MeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         let dic = User.getUser()
         if let flag = dic["flag"] as? Int where flag == 1 {
-//            loginBtn.titleLabel?.text = dic["web_user"]!["name"] as? String
             loginBtn.setTitle(dic["web_user"]!["name"] as? String, forState: UIControlState.Normal)
             loginBtn.enabled = false
         }else {
-//            loginBtn.titleLabel?.text = "登陆正品折扣"
             loginBtn.setTitle("登陆正品折扣", forState: UIControlState.Normal)
             loginBtn.enabled = true 
         }

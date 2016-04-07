@@ -24,6 +24,9 @@
 		045EDE841CA124F600D734EC /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EDE821CA124F600D734EC /* ProductViewController.xib */; };
 		045EDE871CA1254F00D734EC /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDE851CA1254F00D734EC /* MeViewController.swift */; };
 		045EDE881CA1254F00D734EC /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EDE861CA1254F00D734EC /* MeViewController.xib */; };
+		046565D91CB38A31004500F7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046565D81CB38A31004500F7 /* Activity.swift */; };
+		046565DB1CB496FD004500F7 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046565DA1CB496FD004500F7 /* WebImage.swift */; };
+		0493CEB01CB65BAB002F878A /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493CEAF1CB65BAB002F878A /* HttpServer.swift */; };
 		04D575501CAD368E00397CB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D5754F1CAD368E00397CB9 /* User.swift */; };
 		1F9EF26FE712C9B46B30CD84 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27116A162C40157F12186E0E /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,9 @@
 		045EDE821CA124F600D734EC /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		045EDE851CA1254F00D734EC /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		045EDE861CA1254F00D734EC /* MeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
+		046565D81CB38A31004500F7 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		046565DA1CB496FD004500F7 /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
+		0493CEAF1CB65BAB002F878A /* HttpServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
 		04D5754F1CAD368E00397CB9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		27116A162C40157F12186E0E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8058B50093D4E3B5387DDDE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +107,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0458443A1CAE104400F5D597 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				04D5754F1CAD368E00397CB9 /* User.swift */,
+				046565D81CB38A31004500F7 /* Activity.swift */,
+				046565DA1CB496FD004500F7 /* WebImage.swift */,
+				0493CEAF1CB65BAB002F878A /* HttpServer.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		045EDE431CA1172D00D734EC = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +143,7 @@
 		045EDE4E1CA1172D00D734EC /* zpzk-text */ = {
 			isa = PBXGroup;
 			children = (
+				0458443A1CAE104400F5D597 /* model */,
 				04D5754C1CACFC6400397CB9 /* cell */,
 				045EDE4F1CA1172D00D734EC /* AppDelegate.swift */,
 				045EDE511CA1172D00D734EC /* ViewController.swift */,
@@ -168,7 +186,6 @@
 		04D5754C1CACFC6400397CB9 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				04D5754F1CAD368E00397CB9 /* User.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -379,10 +396,13 @@
 			files = (
 				040C16EA1CA28D8A00EDD620 /* LoginViewController.swift in Sources */,
 				045EDE871CA1254F00D734EC /* MeViewController.swift in Sources */,
+				046565DB1CB496FD004500F7 /* WebImage.swift in Sources */,
 				040C16EE1CA290CE00EDD620 /* RegisterViewController.swift in Sources */,
 				045EDE521CA1172D00D734EC /* ViewController.swift in Sources */,
 				04D575501CAD368E00397CB9 /* User.swift in Sources */,
+				0493CEB01CB65BAB002F878A /* HttpServer.swift in Sources */,
 				045EDE7F1CA1248E00D734EC /* ActivityViewController.swift in Sources */,
+				046565D91CB38A31004500F7 /* Activity.swift in Sources */,
 				045EDE831CA124F600D734EC /* ProductViewController.swift in Sources */,
 				045EDE501CA1172D00D734EC /* AppDelegate.swift in Sources */,
 			);

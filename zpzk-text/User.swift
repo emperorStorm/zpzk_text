@@ -16,7 +16,6 @@ class User {
     
     static func getUser() -> [String:AnyObject]{
         let user = NSUserDefaults.standardUserDefaults()
-//        let dic = user.objectForKey("User") as? [String:AnyObject]
         if let dic =  user.objectForKey("User") as? [String:AnyObject] {
             return  dic
         }else {
