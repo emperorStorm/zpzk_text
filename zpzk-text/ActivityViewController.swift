@@ -9,18 +9,26 @@
 import UIKit
 import Alamofire
 
-class ActivityViewController: UIViewController,UIScrollViewDelegate {
+class ActivityViewController: UIViewController,UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var tableView: UITableView!
 
     
     var sumArray = [Activity]()
     var showArray = [Activity]()
     var timer = NSTimer()
+    var shops = [Activity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.tintColor = UIColor.redColor()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerNib(UINib(nibName: "ActivityTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+
         
     }
 
@@ -42,6 +50,8 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate {
             print(response)
             if let JSON = response.result.value {
                 self.sumArray = Activity.saveActivity(JSON)
+                self.shops = Activity.getActivityShop(JSON)
+                self.tableView.reloadData()
                 self.loadShowArray()
             }
         }
@@ -49,20 +59,24 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate {
     
     //加载ShowArray数据
     func loadShowArray() {
-        pageControl.numberOfPages = sumArray.count
+        for image in self.scrollView.subviews{
+            image.removeFromSuperview()
+        }
+        
         scrollView.contentSize = CGSizeMake(CGFloat(sumArray.count) * scrollView.frame.width, scrollView.frame.height)
         scrollView.showsHorizontalScrollIndicator = false
         changeShowArray()
+        
         for (index,imageStr) in showArray.enumerate() {
             let picture = UIImageView(frame: CGRectMake(CGFloat(index) * scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height))
-            print(imageStr.image_path!)
-
-//            picture.setWebImage(imageStr.image_path)
-            picture.setZYHWebImage(imageStr.image_path, defaultImage: nil)
+            
+            picture.setWebImage(imageStr.image_path!, placeHolder: UIImage(named: "zpzk"))
+            
             scrollView.addSubview(picture)
         }
-        print(scrollView.subviews.count)
+        pageControl.numberOfPages = sumArray.count
         
+        //将视图移至中间
         scrollView.setContentOffset(CGPointMake(scrollView.frame.size.width,0), animated: false)
         timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("nextImage"), userInfo: nil, repeats: true)
     }
@@ -75,7 +89,7 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate {
     //当scrollView的contentOffset发生变化时调用
     func scrollViewDidScroll(scrollView: UIScrollView) {
         //判断是不是这个scrollView，可能存在多个scrollView的contentOffset发生变化
-        if scrollView != scrollView{
+        if scrollView != self.scrollView{
             return
         }
         
@@ -98,10 +112,9 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate {
     func changeShowView() {
         changeShowArray()
         var scrollImages = scrollView.subviews as! [UIImageView]
-        
+
         for (index,imageStr) in showArray.enumerate() {
-//            scrollImages[index].setWebImage(imageStr.image_path)
-            scrollImages[index].setZYHWebImage(imageStr.image_path, defaultImage: nil)
+            scrollImages[index].setWebImage(imageStr.image_path!, placeHolder: UIImage(named: "zpzk"))
         }
         scrollView.setContentOffset(CGPointMake(scrollView.frame.size.width,0), animated: false)
     }
@@ -126,5 +139,23 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate {
         showArray.append(sumArray[first])
         showArray.append(sumArray[current])
         showArray.append(sumArray[last])
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shops.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ActivityTableViewCell
+        let shop = shops[indexPath.row]
+        cell.shopName.text = shop.name
+        cell.shopDiscount.text = String(shop.discount)+"折起"
+        cell.shopImage.setWebImage(shop.image_url, placeHolder: UIImage(named: "zpzk"))
+
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 170
     }
 }
