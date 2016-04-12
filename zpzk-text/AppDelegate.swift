@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    //加载标签
+    func logMenu() {
+        let param = [String:AnyObject]()
+        Alamofire.request(.GET, "http://api.zpzk100.com/client/tag_list", parameters: param).responseJSON {
+            (response) -> Void in
+//            debugPrint(response)
+//            let ary = try! NSJSONSerialization.JSONObjectWithData(response.data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+            if let JSON = response.result.value {
+                LogMenu.setMenu(JSON as! NSArray)
+            }
+            print(response)
+        }
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        logMenu()
         return true
     }
 

@@ -9,11 +9,14 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    let menuArray = LogMenu.getMenu()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        menuArray = LogMenu.getMenu()
+        loadMenu()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +24,19 @@ class ProductViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //加载标签
+    func loadMenu() {
+        scrollView.contentSize = CGSizeMake(CGFloat(menuArray.count) * 65, 30)
+        for index in 0..<menuArray.count {
+            let btn = UIButton(type: .System)
+            btn.frame = CGRectMake(CGFloat(index) * 65, 0, 65, 30)
+            btn.setTitle(menuArray[index]["name"] as? String, forState: .Normal)
+            btn.tintColor = UIColor.blackColor()
+            scrollView.addSubview(btn)
+        }
     }
-    */
 
+    @IBAction func logMenu(sender: UIButton) {
+        
+    }
 }

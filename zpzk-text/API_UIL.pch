@@ -1,0 +1,16 @@
+//
+//  API_UIL.pch
+//  zpzk-text
+//
+//  Created by mac on 16/4/12.
+//  Copyright © 2016年 mac. All rights reserved.
+//
+
+#ifndef API_UIL_pch
+#define API_UIL_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define API_URL "http://api.zpzk100.com/client/"
+
+#endif /* API_UIL_pch */

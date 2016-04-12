@@ -28,7 +28,7 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate,UITableViewD
         tableView.dataSource = self
         tableView.registerNib(UINib(nibName: "ActivityTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
-
+        loadImage()
         
     }
 
@@ -38,7 +38,7 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate,UITableViewD
     }
     
     override func viewWillAppear(animated: Bool) {
-        loadImage()
+        
     }
     
 

@@ -45,7 +45,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         dic["name"] = name.text
         dic["pwd"] = password.text
         
-        Alamofire.request(.POST, "http://api.zpzk100.com/client/login", parameters: dic).responseJSON { (response) -> Void in
+        Alamofire.request(.POST,"http://api.zpzk100.com/client/login", parameters: dic).responseJSON { (response) -> Void in
             if let JSON = response.result.value {
                 if let flag = JSON["flag"] as? Int where flag == 1 {
                     self.MsgShow("登陆成功", OKAction: { () -> () in
