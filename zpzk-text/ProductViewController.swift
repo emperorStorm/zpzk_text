@@ -144,6 +144,6 @@ class ProductViewController: UIViewController,UICollectionViewDataSource,UIColle
 
     //点击进入左侧分类菜单
     @IBAction func logMenu(sender: UIButton) {
-        
+        presentViewController(LogMenuViewController(), animated: true, completion: nil)
     }
 }

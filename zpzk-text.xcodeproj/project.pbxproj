@@ -38,6 +38,11 @@
 		0489793A1CBB437A0022788E /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048979381CBB437A0022788E /* ActivityTableViewCell.xib */; };
 		0489797A1CBC89560022788E /* LogMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048979791CBC89560022788E /* LogMenu.swift */; };
 		0493CEB01CB65BAB002F878A /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493CEAF1CB65BAB002F878A /* HttpServer.swift */; };
+		049C68571CC1CF4800F6FB1E /* LogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C68551CC1CF4800F6FB1E /* LogMenuViewController.swift */; };
+		049C68581CC1CF4800F6FB1E /* LogMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049C68561CC1CF4800F6FB1E /* LogMenuViewController.xib */; };
+		049C685B1CC1DBA700F6FB1E /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C68591CC1DBA700F6FB1E /* MenuCollectionViewCell.swift */; };
+		049C685C1CC1DBA700F6FB1E /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049C685A1CC1DBA700F6FB1E /* MenuCollectionViewCell.xib */; };
+		049C685E1CC1E33500F6FB1E /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C685D1CC1E33500F6FB1E /* HeaderReusableView.swift */; };
 		04D575501CAD368E00397CB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D5754F1CAD368E00397CB9 /* User.swift */; };
 		1F9EF26FE712C9B46B30CD84 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27116A162C40157F12186E0E /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +103,11 @@
 		048979791CBC89560022788E /* LogMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMenu.swift; sourceTree = "<group>"; };
 		048979841CBD2DC70022788E /* API_UIL.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API_UIL.pch; sourceTree = "<group>"; };
 		0493CEAF1CB65BAB002F878A /* HttpServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
+		049C68551CC1CF4800F6FB1E /* LogMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMenuViewController.swift; sourceTree = "<group>"; };
+		049C68561CC1CF4800F6FB1E /* LogMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogMenuViewController.xib; sourceTree = "<group>"; };
+		049C68591CC1DBA700F6FB1E /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		049C685A1CC1DBA700F6FB1E /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		049C685D1CC1E33500F6FB1E /* HeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		04D5754F1CAD368E00397CB9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		27116A162C40157F12186E0E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8058B50093D4E3B5387DDDE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +190,8 @@
 				045EDE821CA124F600D734EC /* ProductViewController.xib */,
 				0482DF271CBFDDF000EBE80D /* ProductDetailViewController.swift */,
 				0482DF281CBFDDF000EBE80D /* ProductDetailViewController.xib */,
+				049C68551CC1CF4800F6FB1E /* LogMenuViewController.swift */,
+				049C68561CC1CF4800F6FB1E /* LogMenuViewController.xib */,
 				045EDE851CA1254F00D734EC /* MeViewController.swift */,
 				045EDE861CA1254F00D734EC /* MeViewController.xib */,
 				040C16E81CA28D8A00EDD620 /* LoginViewController.swift */,
@@ -229,6 +241,9 @@
 				048979381CBB437A0022788E /* ActivityTableViewCell.xib */,
 				0482DF211CBF31F300EBE80D /* ProductCollectionViewCell.swift */,
 				0482DF221CBF31F300EBE80D /* ProductCollectionViewCell.xib */,
+				049C68591CC1DBA700F6FB1E /* MenuCollectionViewCell.swift */,
+				049C685A1CC1DBA700F6FB1E /* MenuCollectionViewCell.xib */,
+				049C685D1CC1E33500F6FB1E /* HeaderReusableView.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -361,12 +376,14 @@
 				0489793A1CBB437A0022788E /* ActivityTableViewCell.xib in Resources */,
 				0482DF241CBF31F300EBE80D /* ProductCollectionViewCell.xib in Resources */,
 				045EDE5A1CA1172D00D734EC /* LaunchScreen.storyboard in Resources */,
+				049C68581CC1CF4800F6FB1E /* LogMenuViewController.xib in Resources */,
 				045EDE571CA1172D00D734EC /* Assets.xcassets in Resources */,
 				045EDE551CA1172D00D734EC /* Main.storyboard in Resources */,
 				045EDE801CA1248E00D734EC /* ActivityViewController.xib in Resources */,
 				040C16EB1CA28D8A00EDD620 /* LoginViewController.xib in Resources */,
 				0482DF2A1CBFDDF000EBE80D /* ProductDetailViewController.xib in Resources */,
 				045EDE841CA124F600D734EC /* ProductViewController.xib in Resources */,
+				049C685C1CC1DBA700F6FB1E /* MenuCollectionViewCell.xib in Resources */,
 				040C16EF1CA290CE00EDD620 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,14 +465,17 @@
 				046565DB1CB496FD004500F7 /* WebImage.swift in Sources */,
 				048979391CBB437A0022788E /* ActivityTableViewCell.swift in Sources */,
 				040C16EE1CA290CE00EDD620 /* RegisterViewController.swift in Sources */,
+				049C685B1CC1DBA700F6FB1E /* MenuCollectionViewCell.swift in Sources */,
 				045EDE521CA1172D00D734EC /* ViewController.swift in Sources */,
 				0489797A1CBC89560022788E /* LogMenu.swift in Sources */,
 				0482DF261CBF819A00EBE80D /* Product.swift in Sources */,
 				04D575501CAD368E00397CB9 /* User.swift in Sources */,
 				0482DF291CBFDDF000EBE80D /* ProductDetailViewController.swift in Sources */,
+				049C685E1CC1E33500F6FB1E /* HeaderReusableView.swift in Sources */,
 				0493CEB01CB65BAB002F878A /* HttpServer.swift in Sources */,
 				045EDE7F1CA1248E00D734EC /* ActivityViewController.swift in Sources */,
 				048979321CB78ADB0022788E /* UIImageView+WebImage.swift in Sources */,
+				049C68571CC1CF4800F6FB1E /* LogMenuViewController.swift in Sources */,
 				046565D91CB38A31004500F7 /* Activity.swift in Sources */,
 				045EDE831CA124F600D734EC /* ProductViewController.swift in Sources */,
 				045EDE501CA1172D00D734EC /* AppDelegate.swift in Sources */,

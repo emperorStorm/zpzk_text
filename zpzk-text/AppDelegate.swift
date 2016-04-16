@@ -29,9 +29,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //加载左侧菜单数据
+    func logLeftMenu() {
+        let param = [String:AnyObject]()
+        Alamofire.request(.GET, "http://api.zpzk100.com/client/tag_and_sub_tag", parameters: param).responseJSON {
+            (response) -> Void in
+            if let JSON = response.result.value {
+                print(JSON)
+                NSUserDefaults.standardUserDefaults().setObject(JSON, forKey: "leftMenu")
+            }
+        }
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         logMenu()
+        logLeftMenu()
         return true
     }
 
