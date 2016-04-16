@@ -47,7 +47,6 @@ class ActivityViewController: UIViewController,UIScrollViewDelegate,UITableViewD
     func loadImage() {
         let dic = [String : AnyObject]()
         Alamofire.request(.GET, "http://api.zpzk100.com/client/brand_theme_index", parameters: dic).responseJSON { (response) -> Void in
-            print(response)
             if let JSON = response.result.value {
                 self.sumArray = Activity.saveActivity(JSON)
                 self.shops = Activity.getActivityShop(JSON)

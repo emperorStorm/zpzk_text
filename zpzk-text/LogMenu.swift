@@ -10,6 +10,7 @@ import Foundation
 
 class LogMenu {
     
+    //存放标签
     static func setMenu(data:NSArray) {
         let menu = NSUserDefaults.standardUserDefaults()
         menu.setObject(data, forKey: "Menu")
